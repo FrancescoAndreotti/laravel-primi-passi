@@ -17,6 +17,12 @@ Route::get('/', function () {
   $data = [
     'nome' => 'Francesco',
     'cognome' => 'Andreotti',
+  ];
+  return view('home', $data);
+});
+
+Route::get("/lista", function () {
+  $data = [
     'lista_spesa' => [
       'Pasta',
       'Mele',
@@ -24,5 +30,5 @@ Route::get('/', function () {
       'Pane'
     ]
   ];
-  return view('home', $data);
-});
+  return view("listaDellaSpesa", $data);
+})->name("lista");
