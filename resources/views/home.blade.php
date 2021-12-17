@@ -8,5 +8,19 @@
 </head>
 <body>
   <h1>Hello World</h1>
+  {{$nome}} 
+  {{$cognome}}
+  <h2>Lista della spesa:</h2>
+  @if(count($lista_spesa) > 0)
+  <ul>
+    @foreach($lista_spesa as $item)
+    <li>
+      {{ $item }}
+    </li>
+    @endforeach
+  </ul>
+  @else 
+  <p>Lista della spesa vuota</p>
+  @endif
 </body>
 </html>
